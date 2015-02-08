@@ -25,7 +25,7 @@ namespace YuYingjian.Validation.Validator
             {
                 IsValid = state,
                 Value = v,
-                Message = string.Format("密码必须是大小写英文字母、数字、英文标点符号组成")
+                Message = string.Format("账户只能是大小写英文字母数字和下划线组成")
             };
         }
 
