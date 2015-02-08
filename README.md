@@ -23,3 +23,6 @@ if(vc.IsValid){
 
 //具体的扩展方法请看Validator文件夹下的源码注释
 ```
+
+###Strings Only
+This library validates strings or any type can convert to string only.
