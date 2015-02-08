@@ -10,9 +10,13 @@ namespace YuYingjian.Validation.Validator
     {
         private static readonly string _password = "^[a-zA-Z0-9`~!@#\\$%\\^&\\*\\(\\)\\-_\\+=\\\\\\|\\\\[\\{\\]\\}:;\"\',<.>/\\?]+$";
 
-        public static ValidationContext IsPassword(this string v)
+        public static ValidationContext IsPassword(this object v)
         {
-            bool state = System.Text.RegularExpressions.Regex.IsMatch(v, _password);
+            bool state = false;
+            if (v is string)
+            {
+                state = System.Text.RegularExpressions.Regex.IsMatch(v.ToString(), _password);
+            }           
             return new ValidationContext
             {
                 IsValid = state,
