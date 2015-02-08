@@ -1,43 +1,48 @@
-# Windows image file caches
+packages/
+bin/
+obj/
+.idea/
+latest/
+/env-vars.bat
+*.suo
+#ignore thumbnails created by windows
 Thumbs.db
-ehthumbs.db
+#Ignore files build by Visual Studio
+*.obj
+*.exe
+*.pdb
+*.user
+*.aps
+*.pch
+*.vspscc
+*_i.c
+*_p.c
+*.ncb
+*.suo
+*.tlb
+*.tlh
+*.bak
+*.cache
+*.ilk
+*.log
+[Bb]in
+[Dd]ebug*/
+*.lib
+*.sbr
+*.resharper.user
+obj/
+[Rr]elease*/
+_ReSharper*/
+[Tt]est[Rr]esult*
+App_Data/
 
-# Folder config file
-Desktop.ini
+NuGet/
+NuGet.Signed/
+*.pfx
 
-# Recycle Bin used on file shares
-$RECYCLE.BIN/
-
-# Windows Installer files
-*.cab
-*.msi
-*.msm
-*.msp
-
-# Windows shortcuts
-*.lnk
-
-# =========================
-# Operating System Files
-# =========================
-
-# OSX
-# =========================
-
-.DS_Store
-.AppleDouble
-.LSOverride
-
-# Thumbnails
-._*
-
-# Files that might appear on external disk
-.Spotlight-V100
-.Trashes
-
-# Directories potentially created on remote AFP share
-.AppleDB
-.AppleDesktop
-Network Trash Folder
-Temporary Items
-.apdisk
+build/
+*.nupkg
+*.pidb
+*.userprefs
+add.sh
+.gitignore
