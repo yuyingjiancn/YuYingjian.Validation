@@ -1,4 +1,4 @@
-##Yuyingjian.Validaiton
+##YuYingjian.Validaiton
 A simple validation library for .NET
 
 visual studio 2013编写 .net framework 4.5.1
