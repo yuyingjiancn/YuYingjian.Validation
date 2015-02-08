@@ -13,10 +13,12 @@ namespace YuYingjian.Validation.Validator
         /// </summary>
         /// <param name="v" type="string"></param>
         /// <returns>将转换后的decimal值存入ValidationContext的Value中</returns>
-        public static ValidationContext IsDecimal(this string v)
+        public static ValidationContext IsDecimal(this object v)
         {
+            bool state = false;
             decimal result = 0;
-            bool state = decimal.TryParse(v.ToString(), out result);
+            if(v != null)
+                state = decimal.TryParse(v.ToString(), out result);
             
             return new ValidationContext
             {

@@ -14,9 +14,12 @@ namespace YuYingjian.Validation.Validator
         /// <param name="v"></param>
         /// <param name="pattern"></param>
         /// <returns></returns>
-        public static ValidationContext IsMatch(this string v, string pattern)
+        public static ValidationContext IsMatch(this object v, string pattern)
         {
-            bool state = System.Text.RegularExpressions.Regex.IsMatch(v, pattern);
+            bool state = false;
+            var s = v as string;
+            if(s != null)
+                state = System.Text.RegularExpressions.Regex.IsMatch(s, pattern);
             return new ValidationContext
             {
                 IsValid = state,

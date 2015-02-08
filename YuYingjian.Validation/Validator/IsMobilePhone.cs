@@ -10,9 +10,14 @@ namespace YuYingjian.Validation.Validator
     {
         private static readonly string _mobilePhone = @"^(\+?0?86\-?)?1[345789][0-9]{9}$";
 
-        public static ValidationContext IsMobilePhone(this string v)
+        public static ValidationContext IsMobilePhone(this object v)
         {
-            bool state = System.Text.RegularExpressions.Regex.IsMatch(v, _mobilePhone);
+            bool state = false;
+            var s = v as string;
+            if (s != null)
+            {
+                state = System.Text.RegularExpressions.Regex.IsMatch(s, _mobilePhone);
+            }
             return new ValidationContext
             {
                 IsValid = state,

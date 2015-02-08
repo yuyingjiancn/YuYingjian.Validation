@@ -13,9 +13,10 @@ namespace YuYingjian.Validation.Validator
         public static ValidationContext IsPassword(this object v)
         {
             bool state = false;
-            if (v is string)
+            var s = v as string;
+            if (s != null)
             {
-                state = System.Text.RegularExpressions.Regex.IsMatch(v.ToString(), _password);
+                state = System.Text.RegularExpressions.Regex.IsMatch(s, _password);
             }           
             return new ValidationContext
             {

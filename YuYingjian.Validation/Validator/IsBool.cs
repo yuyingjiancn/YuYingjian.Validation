@@ -13,10 +13,12 @@ namespace YuYingjian.Validation.Validator
         /// </summary>
         /// <param name="v" type="string"></param>
         /// <returns>将转换后的bool值存入ValidationContext的Value中</returns>
-        public static ValidationContext IsBool(this string v)
+        public static ValidationContext IsBool(this object v)
         {
+            bool state = false;
             bool result = false;
-            bool state = bool.TryParse(v.ToString(), out result);
+            if(v != null)
+                state = bool.TryParse(v.ToString(), out result);
             return new ValidationContext
             {
                 IsValid = state,

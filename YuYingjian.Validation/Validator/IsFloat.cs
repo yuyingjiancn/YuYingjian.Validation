@@ -13,10 +13,12 @@ namespace YuYingjian.Validation.Validator
         /// </summary>
         /// <param name="v" type="string"></param>
         /// <returns>将转换后的float值存入ValidationContext的Value中</returns>
-        public static ValidationContext IsFloat(this string v)
+        public static ValidationContext IsFloat(this object v)
         {
+            bool state = false;
             float result = 0;
-            bool state = float.TryParse(v.ToString(), out result);       
+            if(v != null)
+                state = float.TryParse(v.ToString(), out result);       
             return new ValidationContext
             {
                 IsValid = state,

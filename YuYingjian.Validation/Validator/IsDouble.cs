@@ -13,10 +13,12 @@ namespace YuYingjian.Validation.Validator
         /// </summary>
         /// <param name="v" type="string"></param>
         /// <returns>将转换后的double值存入ValidationContext的Value中</returns>
-        public static ValidationContext IsDouble(this string v)
+        public static ValidationContext IsDouble(this object v)
         {
+            bool state = false;
             double result = 0;
-            bool state = double.TryParse(v.ToString(), out result);
+            if(v != null)
+                state = double.TryParse(v.ToString(), out result);
             
             return new ValidationContext
             {

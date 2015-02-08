@@ -15,14 +15,14 @@ namespace YuYingjian.Validation.Validator
         /// <param name="v">字符串</param>
         /// <param name="format">指定的日期格式</param>
         /// <returns>返回的时候v会被转换为DateTime类型存于ValidationContext的Value中</returns>
-        public static ValidationContext IsDateTime(this string v, string format)
+        public static ValidationContext IsDateTime(this object v, string format)
         {
             DateTime result = DateTime.Now;
             bool state = false;
             if (v != null)
             {
                 state = DateTime.TryParseExact(
-                v,
+                v.ToString(),
                 format,
                 CultureInfo.InvariantCulture, //The invariant culture is culture-insensitive; it is associated with the English language but not with any country/region.
                 DateTimeStyles.None, //Indicates that the default formatting options must be used. This is the default style for DateTime.Parse and DateTime.ParseExact.

@@ -14,10 +14,16 @@ namespace YuYingjian.Validation.Validator
         /// <param name="v"></param>
         /// <param name="max"></param>
         /// <returns></returns>
-        public static ValidationContext IsMaxLength(this string v, int max)
+        public static ValidationContext IsMaxLength(this object v, int max)
         {
-            var len = v.Length;
-            bool state = len <= max;
+            bool state = false;
+            var s = v as string;
+            if (s != null)
+            {
+                var len = s.Length;
+                state = len <= max;
+            }
+            
             return new ValidationContext
             {
                 IsValid = state,

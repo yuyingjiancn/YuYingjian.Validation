@@ -13,10 +13,12 @@ namespace YuYingjian.Validation.Validator
         /// </summary>
         /// <param name="v"></param>
         /// <returns>将转换后的int值存入ValidationContext的Value中</returns>
-        public static ValidationContext IsInt(this string v)
+        public static ValidationContext IsInt(this object v)
         {
+            bool state = false;
             int result = 0;
-            bool state = int.TryParse(v.ToString(), out result);
+            if(v != null)
+                state = int.TryParse(v.ToString(), out result);
             
             return new ValidationContext
             {

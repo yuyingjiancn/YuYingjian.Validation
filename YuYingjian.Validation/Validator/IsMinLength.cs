@@ -14,10 +14,16 @@ namespace YuYingjian.Validation.Validator
         /// <param name="v"></param>
         /// <param name="min"></param>
         /// <returns></returns>
-        public static ValidationContext IsMinLength(this string v, int min)
+        public static ValidationContext IsMinLength(this object v, int min)
         {
-            var len = v.Length;
-            bool state = len >= min;
+            bool state = false;
+            var s = v as string;
+            if (s != null)
+            {
+                var len = s.Length;
+                state = len >= min;
+            }
+            
             return new ValidationContext
             {
                 IsValid = state,

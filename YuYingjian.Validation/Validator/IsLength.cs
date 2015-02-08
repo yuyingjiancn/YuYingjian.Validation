@@ -15,10 +15,15 @@ namespace YuYingjian.Validation.Validator
         /// <param name="min"></param>
         /// <param name="max"></param>
         /// <returns></returns>
-        public static ValidationContext IsLength(this string v, int min, int max)
+        public static ValidationContext IsLength(this object v, int min, int max)
         {
-            var len = v.Length;
-            bool state = len >= min && len <= max;
+            bool state = false;
+            var s = v as string;
+            if (s != null)
+            {
+                var len = s.Length;
+                state = len >= min && len <= max;
+            }
             return new ValidationContext
             {
                 IsValid = state,
