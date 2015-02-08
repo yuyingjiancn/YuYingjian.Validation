@@ -1,0 +1,1 @@
+﻿packages\xunit.runners.2.0.0-rc1-build2826\tools\xunit.console.exe YuYingjian.Validation.Test\bin\Debug\YuYingjian.Validation.Test.dll
