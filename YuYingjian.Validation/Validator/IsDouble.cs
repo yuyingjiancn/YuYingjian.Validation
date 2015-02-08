@@ -15,10 +15,8 @@ namespace YuYingjian.Validation.Validator
         /// <returns>将转换后的double值存入ValidationContext的Value中</returns>
         public static ValidationContext IsDouble(this object v)
         {
-            bool state = false;
             double result = 0;
-            if(v != null)
-                state = double.TryParse(v.ToString(), out result);
+            bool state = v != null && double.TryParse(v.ToString(), out result);
             
             return new ValidationContext
             {

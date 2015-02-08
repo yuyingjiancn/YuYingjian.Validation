@@ -8,8 +8,6 @@ namespace YuYingjian.Validation.Validator
 {
     public static partial class Validator
     {
-        //private static readonly string _creditCard = @"^(?:4[0-9]{12}(?:[0-9]{3})?|5[1-5][0-9]{14}|6(?:011|5[0-9][0-9])[0-9]{12}|3[47][0-9]{13}|3(?:0[0-5]|[68][0-9])[0-9]{11}|(?:2131|1800|35\d{3})\d{11})$";
-
         private static bool _isCreditCard(string s)
         {
             s = s.Replace("-", "").Replace(" ", "");
@@ -48,7 +46,6 @@ namespace YuYingjian.Validation.Validator
             var s = v as string;
             if (s != null)
             {
-                //state = System.Text.RegularExpressions.Regex.IsMatch(s, _creditCard);
                 if(s.Trim() != string.Empty)
                     state = _isCreditCard(s.Trim());
             }           

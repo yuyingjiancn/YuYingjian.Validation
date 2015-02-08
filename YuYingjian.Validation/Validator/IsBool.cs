@@ -15,14 +15,12 @@ namespace YuYingjian.Validation.Validator
         /// <returns>将转换后的bool值存入ValidationContext的Value中</returns>
         public static ValidationContext IsBool(this object v)
         {
-            bool state = false;
             bool result = false;
-            if(v != null)
-                state = bool.TryParse(v.ToString(), out result);
+            bool state = v != null && bool.TryParse(v.ToString(), out result);
             return new ValidationContext
             {
                 IsValid = state,
-                Value = state ? (object)result : v,
+                Value = state ? result : v,
                 Message = "必须是布尔型[bool]"
             };
         }

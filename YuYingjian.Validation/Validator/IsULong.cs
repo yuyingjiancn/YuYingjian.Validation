@@ -15,10 +15,8 @@ namespace YuYingjian.Validation.Validator
         /// <returns>将转换后的long值存入ValidationContext的Value中</returns>
         public static ValidationContext IsULong(this object v)
         {
-            bool state = false;
             ulong result = 0;
-            if(v != null)
-                state = ulong.TryParse(v.ToString(), out result);
+            bool state = v != null && ulong.TryParse(v.ToString(), out result);
             
             return new ValidationContext
             {

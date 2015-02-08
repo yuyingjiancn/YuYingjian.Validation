@@ -15,10 +15,8 @@ namespace YuYingjian.Validation.Validator
         /// <returns>将转换后的float值存入ValidationContext的Value中</returns>
         public static ValidationContext IsFloat(this object v)
         {
-            bool state = false;
             float result = 0;
-            if(v != null)
-                state = float.TryParse(v.ToString(), out result);       
+            bool state = v != null && float.TryParse(v.ToString(), out result);       
             return new ValidationContext
             {
                 IsValid = state,

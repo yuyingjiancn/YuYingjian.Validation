@@ -15,15 +15,13 @@ namespace YuYingjian.Validation.Validator
         /// <returns>将转换后的byte值存入ValidationContext的Value中</returns>
         public static ValidationContext IsByte(this object v)
         {
-            bool state = false;
             byte result = 0;
-            if(v != null)
-                state = byte.TryParse(v.ToString(), out result);
+            bool state = v != null && byte.TryParse(v.ToString(), out result);
             
             return new ValidationContext
             {
                 IsValid = state,
-                Value = state ? (object)result : v,
+                Value = state ? result : v,
                 Message = "必须是整型[int]"
             };
         }

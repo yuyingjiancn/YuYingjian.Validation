@@ -15,10 +15,8 @@ namespace YuYingjian.Validation.Validator
         /// <returns>将转换后的byte值存入ValidationContext的Value中</returns>
         public static ValidationContext IsSByte(this object v)
         {
-            bool state = false;
             sbyte result = 0;
-            if(v != null)
-                state = sbyte.TryParse(v.ToString(), out result);
+            bool state = v != null && sbyte.TryParse(v.ToString(), out result);
             
             return new ValidationContext
             {

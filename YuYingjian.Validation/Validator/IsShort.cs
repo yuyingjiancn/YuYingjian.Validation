@@ -15,10 +15,8 @@ namespace YuYingjian.Validation.Validator
         /// <returns>将转换后的short值存入ValidationContext的Value中</returns>
         public static ValidationContext IsShort(this object v)
         {
-            bool state = false;
             short result = 0;
-            if(v != null)
-                state = short.TryParse(v.ToString(), out result);
+            bool state = v != null && short.TryParse(v.ToString(), out result);
             
             return new ValidationContext
             {

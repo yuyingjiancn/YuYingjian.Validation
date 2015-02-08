@@ -15,10 +15,8 @@ namespace YuYingjian.Validation.Validator
         /// <returns>将转换后的int值存入ValidationContext的Value中</returns>
         public static ValidationContext IsUInt(this object v)
         {
-            bool state = false;
             uint result = 0;
-            if(v != null)
-                state = uint.TryParse(v.ToString(), out result);
+            bool state = v != null && uint.TryParse(v.ToString(), out result);
             
             return new ValidationContext
             {

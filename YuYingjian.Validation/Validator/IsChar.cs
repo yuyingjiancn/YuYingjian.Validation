@@ -15,15 +15,13 @@ namespace YuYingjian.Validation.Validator
         /// <returns>将转换后的char值存入ValidationContext的Value中</returns>
         public static ValidationContext IsChar(this object v)
         {
-            bool state = false;
             char result = 'Y';
-            if(v != null)
-                state = char.TryParse(v.ToString(), out result);
+            bool state = v != null && char.TryParse(v.ToString(), out result);
             
             return new ValidationContext
             {
                 IsValid = state,
-                Value = state ? (object)result : v,
+                Value = state ? result : v,
                 Message = "必须是整型[int]"
             };
         }

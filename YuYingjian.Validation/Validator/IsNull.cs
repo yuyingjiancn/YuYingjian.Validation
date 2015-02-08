@@ -20,7 +20,7 @@ namespace YuYingjian.Validation.Validator
             {
                 IsValid = state,
                 Value = v,
-                Message = "对象不能为null"
+                Message = "对象必须是null"
             };
         }
 
