@@ -19,7 +19,7 @@ if(vc.IsValid){
   logger.info(vc.Message);
 }
 
-".net45yyj".IsLength(6, 20).IsPassword().Msg("6~20位大小写英文字母数字英文标点符号")
+".net45yyj".IsLength(6, 20).IsPassword().Msg("6~20位大小写英文字母数字英文标点符号");
 
 //具体的扩展方法请看Validator文件夹下的源码注释
 ```
