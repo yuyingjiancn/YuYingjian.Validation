@@ -44,6 +44,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Validator\IsAscii.cs" />
     <Compile Include="Validator\IsCreditCard.cs" />
+    <Compile Include="Validator\IsMoney.cs" />
+    <Compile Include="Validator\IsPhoneNumber.cs" />
+    <Compile Include="Validator\IsUrl.cs" />
     <Compile Include="Validator\IsHexcolor.cs" />
     <Compile Include="Validator\IsHexadecimal.cs" />
     <Compile Include="Validator\IsAlphaNumeric.cs" />
@@ -80,7 +83,7 @@
     <Compile Include="Validator\IsLength.cs" />
     <Compile Include="Validator\IsMaxLength.cs" />
     <Compile Include="Validator\IsMinLength.cs" />
-    <Compile Include="Validator\IsMobilePhone.cs" />
+    <Compile Include="Validator\IsMobilePhoneChina.cs" />
     <Compile Include="Validator\IsPassword.cs" />
     <Compile Include="Validator\Msg.cs" />
   </ItemGroup>

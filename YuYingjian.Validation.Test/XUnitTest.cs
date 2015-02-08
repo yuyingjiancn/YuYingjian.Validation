@@ -40,9 +40,10 @@ namespace YuYingjian.Validation.Test
         [Fact]
         public void IsMobilePhoneTest()
         {
-            Assert.True("13757378424".IsMobilePhone().IsValid);
-            Assert.False("12679342365".IsMobilePhone().IsValid);
-            Assert.False("87234152".IsMobilePhone().IsValid);
+            Assert.True("13757378424".IsMobilePhoneChina().IsValid);
+            Assert.False("12679342365".IsMobilePhoneChina().IsValid);
+            Assert.False("87234152".IsMobilePhoneChina().IsValid);
+            Assert.True("1".IsPhoneNumber().IsValid);
         }
 
         [Fact]
@@ -69,7 +70,20 @@ namespace YuYingjian.Validation.Test
         public void IsInRangeTest()
         {
             Assert.True("1".IsInRange("0","2").IsValid);
-            Assert.True(5.IsInRange(1, 10).IsValid);
+            //Assert.True("5".IsInRange(1, 10).IsValid);
+            Assert.False("  ".IsCreditCard().IsValid);
+            Assert.True("10".IsMoney().IsValid);
+        }
+
+        [Fact]
+        public void MoneyTest()
+        {
+            Assert.True("10".IsMoney().IsValid);
+            Assert.True("06".IsMoney().IsValid);
+            Assert.False("6.".IsMoney().IsValid);
+            Assert.True("6.6".IsMoney().IsValid);
+            Assert.True("6.66".IsMoney().IsValid);
+            Assert.False("6.666".IsMoney().IsValid);
         }
     }
 }
