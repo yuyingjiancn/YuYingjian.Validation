@@ -13,9 +13,12 @@ namespace YuYingjian.Validation.Validator
         /// </summary>
         /// <param name="v"></param>
         /// <returns></returns>
-        public static ValidationContext NotEmpty(this string v)
+        public static ValidationContext NotEmpty(this object v)
         {
-            bool state = v != string.Empty;
+            bool state = false;
+            var s = v as string;
+            if (s != null)
+                state = s != string.Empty;
             return new ValidationContext
             {
                 IsValid = state,
