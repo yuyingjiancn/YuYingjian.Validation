@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -43,7 +44,6 @@ namespace YuYingjian.Validation.Test
             Assert.True("13757378424".IsMobilePhoneChina().IsValid);
             Assert.False("12679342365".IsMobilePhoneChina().IsValid);
             Assert.False("87234152".IsMobilePhoneChina().IsValid);
-            Assert.True("1".IsPhoneNumber().IsValid);
         }
 
         [Fact]
@@ -70,8 +70,6 @@ namespace YuYingjian.Validation.Test
         public void IsInRangeTest()
         {
             Assert.True("1".IsInRange("0","2").IsValid);
-            //Assert.True("5".IsInRange(1, 10).IsValid);
-            Assert.False("  ".IsCreditCard().IsValid);
             Assert.True("10".IsMoney().IsValid);
         }
 
@@ -84,6 +82,14 @@ namespace YuYingjian.Validation.Test
             Assert.True("6.6".IsMoney().IsValid);
             Assert.True("6.66".IsMoney().IsValid);
             Assert.False("6.666".IsMoney().IsValid);
+        }
+
+        [Fact]
+        public void CreditCardTest()
+        {
+            Assert.False("  ".IsCreditCard().IsValid);
+            Assert.False("13757378424".IsCreditCard().IsValid);
+            Assert.True("6222020903001483077".IsCreditCard().IsValid);
         }
     }
 }
