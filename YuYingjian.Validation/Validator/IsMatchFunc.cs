@@ -16,7 +16,7 @@ namespace YuYingjian.Validation.Validator
         /// <returns></returns>
         public static ValidationContext IsMatchFunc(this object v, Func<object, bool> matchFunc )
         {
-            bool state = matchFunc.Invoke(v);
+            bool state = v != null && matchFunc.Invoke(v);
 
             return new ValidationContext
             {
