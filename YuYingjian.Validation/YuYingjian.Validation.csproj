@@ -47,6 +47,7 @@
     <Compile Include="Validator\IsHexcolor.cs" />
     <Compile Include="Validator\IsHexadecimal.cs" />
     <Compile Include="Validator\IsAlphaNumeric.cs" />
+    <Compile Include="Validator\IsMatchFunc.cs" />
     <Compile Include="Validator\IsNumeric.cs" />
     <Compile Include="Validator\IsBool.cs" />
     <Compile Include="Validator\IsAccount.cs" />
