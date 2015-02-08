@@ -1,6 +1,10 @@
 ##Yuyingjian.Validaiton
 A simple validation library for .NET
 
+visual studio 2013编写 .net framework 4.5.1 
+
+要在低版本中使用，自己想办法-_-
+
 ###Example
 ```cs
 using YuYingjian.Validation;
