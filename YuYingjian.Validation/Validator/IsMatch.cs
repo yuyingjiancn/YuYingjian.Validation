@@ -31,7 +31,7 @@ namespace YuYingjian.Validation.Validator
         public static ValidationContext IsMatch(this ValidationContext vc, string pattern)
         {
             if (!vc.IsValid) return vc;
-            return vc.Value.ToString().IsMatch(pattern);
+            return vc.Value.IsMatch(pattern);
         }
     }
 }

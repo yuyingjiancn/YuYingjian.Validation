@@ -20,9 +20,10 @@ namespace YuYingjian.Validation.Validator
         public static ValidationContext IsInRange(this object v, IComparable min, IComparable max)
         {
             bool state = false;
-            if (v is IComparable)
+            var value = v as IComparable;
+            if (value != null)
             {
-                state = Comparer.GetComparisonResult((IComparable)v, min) >= 0 && Comparer.GetComparisonResult((IComparable)v, max) <= 0;
+                state = Comparer.GetComparisonResult(value, min) >= 0 && Comparer.GetComparisonResult(value, max) <= 0;
             }
             
             return new ValidationContext

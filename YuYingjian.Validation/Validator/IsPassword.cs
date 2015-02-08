@@ -29,7 +29,7 @@ namespace YuYingjian.Validation.Validator
         public static ValidationContext IsPassword(this ValidationContext vc)
         {
             if (!vc.IsValid) return vc;
-            return vc.Value.ToString().IsPassword();
+            return vc.Value.IsPassword();
         }
     }
 }

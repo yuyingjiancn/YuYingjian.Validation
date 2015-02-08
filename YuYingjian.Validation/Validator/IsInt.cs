@@ -31,7 +31,7 @@ namespace YuYingjian.Validation.Validator
         public static ValidationContext IsInt(this ValidationContext vc)
         {
             if (!vc.IsValid) return vc;
-            return vc.Value.ToString().IsInt();
+            return vc.Value.IsInt();
         }
     }
 }

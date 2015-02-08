@@ -35,7 +35,7 @@ namespace YuYingjian.Validation.Validator
         public static ValidationContext IsMaxLength(this ValidationContext vc, int max)
         {
             if (!vc.IsValid) return vc;
-            return vc.Value.ToString().IsMaxLength(max);
+            return vc.Value.IsMaxLength(max);
         }
     }
 }

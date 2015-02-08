@@ -27,7 +27,7 @@ namespace YuYingjian.Validation.Validator
         public static ValidationContext IsEmail(this ValidationContext vc)
         {
             if (!vc.IsValid) return vc;
-            return vc.Value.ToString().IsEmail();
+            return vc.Value.IsEmail();
         }
     }
 }

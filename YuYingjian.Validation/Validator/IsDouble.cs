@@ -31,7 +31,7 @@ namespace YuYingjian.Validation.Validator
         public static ValidationContext IsDouble(this ValidationContext vc)
         {
             if (!vc.IsValid) return vc;
-            return vc.Value.ToString().IsDouble();
+            return vc.Value.IsDouble();
         }
     }
 }

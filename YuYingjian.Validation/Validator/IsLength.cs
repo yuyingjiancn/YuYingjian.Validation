@@ -35,7 +35,7 @@ namespace YuYingjian.Validation.Validator
         public static ValidationContext IsLength(this ValidationContext vc, int min, int max)
         {
             if (!vc.IsValid) return vc;
-            return vc.Value.ToString().IsLength(min, max);
+            return vc.Value.IsLength(min, max);
         }
     }
 }

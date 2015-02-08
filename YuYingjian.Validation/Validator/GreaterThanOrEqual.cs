@@ -20,9 +20,10 @@ namespace YuYingjian.Validation.Validator
         {
             bool state = false;
 
-            if (v is IComparable)
+            var value = v as IComparable;
+            if (value != null)
             {
-                state = Comparer.GetComparisonResult((IComparable) v, c) >= 0;
+                state = Comparer.GetComparisonResult(value, c) >= 0;
             }
 
             return new ValidationContext

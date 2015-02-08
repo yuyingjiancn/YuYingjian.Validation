@@ -29,7 +29,7 @@ namespace YuYingjian.Validation.Validator
         public static ValidationContext IsMobilePhone(this ValidationContext vc)
         {
             if (!vc.IsValid) return vc;
-            return vc.Value.ToString().IsMobilePhone();
+            return vc.Value.IsMobilePhone();
         }
     }
 }

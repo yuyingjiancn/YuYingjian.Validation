@@ -31,7 +31,7 @@ namespace YuYingjian.Validation.Validator
         public static ValidationContext IsDecimal(this ValidationContext vc)
         {
             if (!vc.IsValid) return vc;
-            return vc.Value.ToString().IsDecimal();
+            return vc.Value.IsDecimal();
         }
     }
 }

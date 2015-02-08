@@ -40,7 +40,7 @@ namespace YuYingjian.Validation.Validator
         public static ValidationContext IsDateTime(this ValidationContext vc, string format)
         {
             if (!vc.IsValid) return vc;
-            return vc.Value.ToString().IsDateTime(format);
+            return vc.Value.IsDateTime(format);
         }
     }
 }

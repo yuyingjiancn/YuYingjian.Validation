@@ -43,6 +43,7 @@
     <Compile Include="ValidationContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Validator\IsBool.cs" />
+    <Compile Include="Validator\IsSByte.cs" />
     <Compile Include="Validator\IsDecimal.cs" />
     <Compile Include="Validator\IsFloat.cs" />
     <Compile Include="Validator\IsEmail.cs" />
@@ -52,10 +53,18 @@
     <Compile Include="Validator\GreaterThan.cs" />
     <Compile Include="Validator\IsDouble.cs" />
     <Compile Include="Validator\IsDateTime.cs" />
+    <Compile Include="Validator\IsChar.cs" />
+    <Compile Include="Validator\IsByte.cs" />
+    <Compile Include="Validator\IsULong.cs" />
+    <Compile Include="Validator\IsUInt.cs" />
+    <Compile Include="Validator\IsLong.cs" />
+    <Compile Include="Validator\IsUShort.cs" />
+    <Compile Include="Validator\IsShort.cs" />
     <Compile Include="Validator\IsMatch.cs" />
     <Compile Include="Validator\LessThanOrEqual.cs" />
     <Compile Include="Validator\LessThan.cs" />
     <Compile Include="Validator\NotEmpty.cs" />
+    <Compile Include="Validator\IsNull.cs" />
     <Compile Include="Validator\NotNull.cs" />
     <Compile Include="Validator\IsInt.cs" />
     <Compile Include="Validator\IsLength.cs" />

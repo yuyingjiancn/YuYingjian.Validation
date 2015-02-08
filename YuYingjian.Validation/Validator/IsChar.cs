@@ -9,28 +9,29 @@ namespace YuYingjian.Validation.Validator
     public static partial class Validator
     {
         /// <summary>
-        /// 判断字符串是否可以转换为float类型
+        /// 判断字符串是否可以转换为char类型
         /// </summary>
-        /// <param name="v" type="string"></param>
-        /// <returns>将转换后的float值存入ValidationContext的Value中</returns>
-        public static ValidationContext IsFloat(this object v)
+        /// <param name="v"></param>
+        /// <returns>将转换后的char值存入ValidationContext的Value中</returns>
+        public static ValidationContext IsChar(this object v)
         {
             bool state = false;
-            float result = 0;
+            char result = 'Y';
             if(v != null)
-                state = float.TryParse(v.ToString(), out result);       
+                state = char.TryParse(v.ToString(), out result);
+            
             return new ValidationContext
             {
                 IsValid = state,
                 Value = state ? (object)result : v,
-                Message = "必须是[float]"
+                Message = "必须是整型[int]"
             };
         }
 
-        public static ValidationContext IsFloat(this ValidationContext vc)
+        public static ValidationContext IsChar(this ValidationContext vc)
         {
             if (!vc.IsValid) return vc;
-            return vc.Value.IsFloat();
+            return vc.Value.IsChar();
         }
     }
 }

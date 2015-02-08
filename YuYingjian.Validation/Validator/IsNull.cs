@@ -9,28 +9,25 @@ namespace YuYingjian.Validation.Validator
     public static partial class Validator
     {
         /// <summary>
-        /// 字符串不能为空
+        /// 对象不能为null
         /// </summary>
         /// <param name="v"></param>
         /// <returns></returns>
-        public static ValidationContext NotEmpty(this object v)
+        public static ValidationContext IsNull(this object v)
         {
-            bool state = false;
-            var s = v as string;
-            if (s != null)
-                state = s != string.Empty;
+            bool state = v == null;
             return new ValidationContext
             {
                 IsValid = state,
                 Value = v,
-                Message = "必填"
+                Message = "对象不能为null"
             };
         }
 
-        public static ValidationContext NotEmpty(this ValidationContext vc)
+        public static ValidationContext IsNull(this ValidationContext vc)
         {
             if (!vc.IsValid) return vc;
-            return vc.Value.NotEmpty();
+            return vc.Value.IsNull();
         }
     }
 }
