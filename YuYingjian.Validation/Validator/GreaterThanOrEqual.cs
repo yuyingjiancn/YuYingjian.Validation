@@ -18,13 +18,8 @@ namespace YuYingjian.Validation.Validator
         /// <returns></returns>
         public static ValidationContext GreaterThanOrEqual(this object v, IComparable c)
         {
-            bool state = false;
-
             var value = v as IComparable;
-            if (value != null)
-            {
-                state = Comparer.GetComparisonResult(value, c) >= 0;
-            }
+            bool state = value != null && Comparer.GetComparisonResult(value, c) >= 0;
 
             return new ValidationContext
             {

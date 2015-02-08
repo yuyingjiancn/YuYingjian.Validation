@@ -11,6 +11,7 @@ namespace YuYingjian.Validation.Validator
     {
         /// <summary>
         /// 判断字符串v是否可以转换为指定format的datetime格式
+        /// "2008-1-1".isDateTime("yyyy-MM-dd")
         /// </summary>
         /// <param name="v">字符串</param>
         /// <param name="format">指定的日期格式</param>
