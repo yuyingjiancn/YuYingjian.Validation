@@ -26,3 +26,6 @@ if(vc.IsValid){
 
 ###Strings Only
 This library validates strings or any type can convert to string only.
+
+###NuGet
+PM> Install-Package YuYingjian.Validation
